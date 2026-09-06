@@ -27,7 +27,8 @@
     "typecheck": "node scripts/typecheck.mjs",
     "build": "node scripts/build.mjs",
     "check:classic": "node scripts/check-classic.mjs",
-    "verify": "node scripts/verify.mjs"
+    "verify": "node scripts/verify.mjs",
+    "sync": "node scripts/sync-repos.mjs"
   },
   "peerDependencies": {
     "@deepseek-ai/dsh-web": "^0.1.0-rc.7",
