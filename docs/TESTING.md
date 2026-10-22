@@ -19,7 +19,7 @@ node scripts/verify.mjs
 | 文件 | 覆盖 |
 | --- | --- |
 | `test/splitKeys.test.js` | `lib/shared.js` 的 splitKeys（管道/逗号/空白分隔、空输入、全空白） |
-| `test/clientLoad.test.js` | `lib/client.js` 的 classic-script 加载契约（注册 + 导出齐全） |
+| `test/clientLoad.test.js` | `lib/client.js` 的 classic-script 加载契约（注册 + 导出齐全）+ `mask`（长 key 头尾、短 key 全打码） |
 
 ## 设计说明
 
