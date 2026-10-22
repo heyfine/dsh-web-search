@@ -1,6 +1,6 @@
 {
   "name": "@deepseek-ai/dsh-web-search-tavily",
-  "description": "DSH Web 搜索插件：Tavily + Keenable 多 key 轮换搜索提供方，附带设置卡（提供方切换 / 密钥管理 / 额度显示）",
+  "description": "DSH Web 搜索插件：Tavily + Keenable 多 key 轮换搜索提供方，附带配置页（提供方切换 / 密钥管理 / 额度显示）",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -20,7 +20,8 @@
   ],
   "license": "MIT",
   "engines": {
-    "node": ">=24"
+    "node": ">=24",
+    "dsh": ">=0.2.1-rc.2 <0.3.0"
   },
   "scripts": {
     "test": "node --test \"test/*.test.js\"",
@@ -31,9 +32,9 @@
     "sync": "node scripts/sync-repos.mjs"
   },
   "peerDependencies": {
-    "@deepseek-ai/dsh-web": "^0.1.0-rc.7",
+    "@deepseek-ai/dsh-web": "^0.2.1-rc.2",
     "@deepseek-ai/schemastery": "^3.18.1",
-    "@deepseek-ai/dsh-settings": "^0.1.0-rc.7"
+    "@deepseek-ai/dsh-settings": "^0.2.1-rc.2"
   },
   "dsh": {
     "client": {
