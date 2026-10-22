@@ -14,5 +14,8 @@ export const inject: readonly ["settingsScope", "slots"];
 /** 设置命名空间（与 Host 一致）。 */
 export const NAMESPACE: "web-search-tavily";
 
+/** 打码密钥：超过 12 位保留头 8 尾 4，否则全打码。 */
+export function mask(key: string): string;
+
 /** 注册设置卡到 `settings.plugin.item`。 */
 export function apply(ctx: import("@deepseek-ai/cordis").Context): void;

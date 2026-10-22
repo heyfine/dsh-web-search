@@ -69,10 +69,24 @@ before(() => {
 });
 
 describe("client.js 加载契约", () => {
-	test("导出齐全 (NAMESPACE / apply / inject / name)", () => {
+	test("导出齐全 (NAMESPACE / apply / inject / name / mask)", () => {
 		assert.equal(clientExports.NAMESPACE, "web-search-tavily");
 		assert.equal(typeof clientExports.apply, "function");
 		assert.ok(Array.isArray(clientExports.inject));
 		assert.equal(clientExports.name, "web-search-tavily");
+		assert.equal(typeof clientExports.mask, "function");
+	});
+
+	test("mask 对长 key 只显示头尾", () => {
+		const key = "tvly-abcdefghijklmnopqrstuvwxyz1234567890";
+		const masked = clientExports.mask(key);
+		assert.notEqual(masked, key);
+		assert.ok(masked.startsWith("tvly-abc"));
+		assert.ok(masked.endsWith("7890"));
+		assert.ok(!masked.includes("qrstuvwxyz"));
+	});
+
+	test("mask 对短 key 全部打码", () => {
+		assert.equal(clientExports.mask("shortkey"), "••••••");
 	});
 });
